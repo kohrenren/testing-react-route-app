@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    padding: 0;
+    display: inline-block; /* Makes the list behave like an inline element */
+}
