@@ -1,3 +1,8 @@
+:root {
+  --color-gold-dark: #8d7a38;
+  --color-gold: #d8c43d;
+}
+
 .layout {
   display: flex;   
   height: 100vh;         
@@ -19,7 +24,7 @@
 }
 
 .page_mainContent {
-  margin-left: 250px;
+  margin-left: 255px;
   height: 100vh;
   flex: 1;
   overflow-y: auto;
@@ -36,18 +41,27 @@
   align-items: center;
   text-align: center;
   position: fixed;
-  width: 210px;
+  width: 250px;
   height: 100vh;
   top: 0;
   left: 0;
-  padding: 20px;
+  /* padding: 20px; */
   z-index: 100;
   color: white;
+  box-shadow: 
+  3px 0 0 0 var(--color-gold-dark),    /* Shadow on the right with dark gold, no blur */
+  5px 0 0 0 var(--color-gold),         /* Shadow on the right with gold, no blur */
+  8px 0 6px 0 rgba(0, 0, 0, 0.16);    /* Outer shadow for depth with slight blur */
 }
+
 
 .sidebar img {
   width: 75%;  /* Make the image full width of the sidebar */
   height: auto; /* Maintain the aspect ratio */
+}
+
+.sidebar nav {
+  width: 100%; /* Make nav occupy full width of sidebar */
 }
 
 .sidebar nav ul {
@@ -64,6 +78,30 @@
 
 .sidebar nav ul li a:hover {
   color: #ffdf01;
+}
+
+.sidebar nav ul li.nav-item {  
+  padding: 10px; 
+  cursor: pointer;
+  position: relative;
+}
+
+.sidebar nav ul li.active {
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.tab-indicator {
+  position: absolute;
+  background-image: url(/public/nav-indicator.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  right: -17px; 
+  top: 0;
+  width: 38px;
+  height: auto; 
+  transform: rotate(-90deg); /* Rotate 90 degrees */
+  transition: transform 0.3s ease, top 0.3s ease, height 0.3s ease;
 }
 
 /* .sidebar.closed {
